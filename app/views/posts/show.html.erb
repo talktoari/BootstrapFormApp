@@ -1,0 +1,40 @@
+<div class="page-header">
+	<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              post_path(@post),
+              :method => 'delete',
+              :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
+              :class => 'btn btn-danger' %>
+  <%= link_to posts_path, :class => 'btn' do %>
+    <i class="icon-list-alt"></i>
+    Back
+  <% end %>
+  <%= link_to edit_post_path(@post), :class => 'btn btn-primary' do %>
+    <i class="icon-pencil icon-white"></i>
+    Edit
+  <% end %>
+  <h1>Listing posts</h1>
+</div>
+
+<dl>
+  <dt>Name:</dt>
+  <dd><%= @post.name %></dd>
+
+  <dt>Gender:</dt>
+  <dd><%= @post.gender %></dd>
+
+  <dt>Title:</dt>
+  <dd><%= @post.title %></dd>
+
+  <dt>Body:</dt>
+  <dd><%= @post.body %></dd>
+
+  <dt>Category:</dt>
+  <dd><%= @post.category %></dd>
+
+  <dt>Published:</dt>
+  <dd><%= @post.published %></dd>
+
+  <dt>Custom date:</dt>
+  <dd><%= @post.custom_date %></dd>
+
+</dl>

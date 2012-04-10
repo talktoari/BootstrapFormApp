@@ -1,0 +1,29 @@
+<%= simple_form_for(@post, :defaults => { :input_html => { :class => 'input-xlarge' } }) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+	<fieldset>
+	<legend>Personal Info</legend>
+    <%= f.input :name, :placeholder => "What do they call you?", :hint => 'No Symbols Please!' %>
+    <%= f.input :gender, :collection => ["Male","Female"], :as => :radio_buttons %>
+    <%= f.input :custom_date, :label => 'Date Of Birth',
+								  :as => :date, :start_year => Date.today.year - 90,
+	                              :end_year => Date.today.year - 12, :discard_day => true,
+	                              :order => [:month, :year], :input_html => { :class => 'input-small' } %>
+	</fieldset>
+	
+	<fieldset>
+	<legend>Post Info</legend>
+    <%= f.input :title, :placeholder => "Enter a Title for the Post" %>
+    <%= f.input :body, :placeholder => "Please Enter Nice Description" %>
+    <%= f.input :category, :collection => ["General","Sample Example","Technical","Miscellaneous"] %>
+    <%= f.input :published, :as => :radio_buttons %>
+	</fieldset>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, :class => "btn-primary" %>
+	<%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+	                posts_path, :class => 'btn' %>
+  </div>
+<% end %>

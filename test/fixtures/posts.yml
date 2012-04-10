@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  gender: MyString
+  title: MyString
+  body: MyText
+  category: MyString
+  published: false
+  custom_date: 2012-04-10
+
+two:
+  name: MyString
+  gender: MyString
+  title: MyString
+  body: MyText
+  category: MyString
+  published: false
+  custom_date: 2012-04-10
